@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+
+            background-color: rgb(66, 66, 66);
+            width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
+
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+        }
+
+        input {
+            width: 500px;
+            height: 50px;
+            border-radius: 5px;
+            font-size: medium;
+            font-weight: 600;
+            text-transform: uppercase;
+
+        }
+
+        input[type="file"] {
+            cursor: pointer !Important;
+            font: 300 14px sans-serif;
+            color: #9e9e9e;
+        }
+
+        input[type="file"]::-webkit-file-upload-button {
+            font: 300 14px sans-serif;
+            background: #009688;
+            border-radius: 5px;
+            padding: 12px 50px;
+            cursor: pointer;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        input[type="file"]::-ms-browse {
+            font: 300 14px 'Roboto', sans-serif;
+            background: #009688;
+            border-radius: 5px;
+            padding: 12px 50px;
+            cursor: pointer;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .home-button-wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="home-button-wrapper">
+        <form action="/" method="get">
+            <input class="home-button" type="submit" value="BACK TO HOME PAGE">
+        </form>
+    </div>
+    <form class="container" action="/split/transaction" method="post" enctype="multipart/form-data">
+        <h1>
+            Split the input file in multiple output files
+        </h1>
+        <input type="file" name="data_file1" accept=".pdf" />
+        <input type="number" name="input2" placeholder="how many pages per file, only if bottom option is None"
+            title="Only numbers">
+        <input type="text" name="input1" placeholder="list with number of pages per file" pattern="[0-9\s]+"
+            title="Only numbers and seperate with space" />
+        <input type="submit" />
+    </form>
+</body>
+
+</html>
